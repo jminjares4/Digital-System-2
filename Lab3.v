@@ -162,18 +162,19 @@ endmodule;
 //            output reg [3:0]N,
 //            output reg HYL, HRL, HW, HDNW
 //            );
-module ROMCircuit(
+module ASM(
     input Clk,
     input YP,
     input NS,
-    input [3:0]States,
-    output reg [3:0]N,
-    output HYL, HRL,
+    output HYL, 
+    output HRL,
     output HW,
     output HDNW);
-    
+
     wire [3:0]stateOut;
-    DFF4Bit stateFlipFlop(.D(N), .clk(Clk), .Q(stateOut));
+    
+
+        DFF4Bit StateFlipFlop(.D(stateOut), .clk(Clk), .Q(stateOut));
     
     ROM RomTable(   .P(stateOut), 
                     .Clk(Clk),
@@ -185,6 +186,5 @@ module ROMCircuit(
                     .HW(HW),
                     .HDNW(HDNW)
                     );
-    
-    
+       
 endmodule;
