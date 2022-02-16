@@ -2,15 +2,15 @@
 
 module DFF(input D, input clk, output reg Q);
     always @ (posedge clk)
-        Q <= D;
-endmodule;
+    Q <= D;
+endmodule
 
 module DFF4Bit(input [3:0] D, input clk, output [3:0]Q);
     DFF dff1(.D(D[0]), .clk(clk), .Q(Q[0]));
     DFF dff2(.D(D[1]), .clk(clk), .Q(Q[1]));
     DFF dff3(.D(D[2]), .clk(clk), .Q(Q[2]));
     DFF dff4(.D(D[3]), .clk(clk), .Q(Q[3]));
-endmodule;
+endmodule
 
 module ROM(
             input [3:0]P,
@@ -154,7 +154,7 @@ module ROM(
             end
       endcase
 end
-endmodule;
+endmodule
 
 //(input [3:0] D, input clk, output [3:0]Q);
 //            input [3:0]P,
@@ -163,28 +163,28 @@ endmodule;
 //            output reg HYL, HRL, HW, HDNW
 //            );
 module ASM(
-    input Clk,
     input YP,
     input NS,
+    input Clk,
     output HYL, 
     output HRL,
     output HW,
     output HDNW);
 
     wire [3:0]stateOut;
-    
+    wire [3:0]n;
 
-        DFF4Bit StateFlipFlop(.D(stateOut), .clk(Clk), .Q(stateOut));
+    DFF4Bit StateFlipFlop(.D(stateOut), .clk(Clk), .Q(n));
     
-    ROM RomTable(   .P(stateOut), 
+    ROM RomTable(   .P(n), 
                     .Clk(Clk),
                     .YP(YP), 
                     .NS(NS), 
-                    .N(N),
+                    .N(stateOut),
                     .HYL(HYL),
                     .HRL(HRL),
                     .HW(HW),
                     .HDNW(HDNW)
                     );
        
-endmodule;
+endmodule
