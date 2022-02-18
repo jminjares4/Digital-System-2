@@ -90,3 +90,5 @@
 
 #GTK wave
 .vvp
+# dump file
+.vcd
