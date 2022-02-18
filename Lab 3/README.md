@@ -179,8 +179,7 @@ endmodule
     end
     endmodule
     ```
-</details> <br>
-
+</details><br>
 
 # ASM Module
 ```verilog
