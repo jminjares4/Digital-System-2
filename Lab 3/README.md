@@ -32,7 +32,7 @@ endmodule
 ```
 # ROM Table
 <details>
-    <summary> ROM Table code </summary> <br>
+    <summary> ROM Table code </summary><br>
 
 ```v
 module ROM(
