@@ -87,3 +87,6 @@
 
 #MacOS
 .DS_Store
+
+#GTK wave
+.vvp
