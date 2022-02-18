@@ -10,7 +10,7 @@ ROM table.
 # Lab Outout
 
 * Waveform
-<img src="images/Lab3Waveform.png">
+<img src="images/lab3waveform.png">
 
 * Schematic
 
