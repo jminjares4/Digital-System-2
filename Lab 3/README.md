@@ -10,9 +10,7 @@ ROM table.
 # Lab Outout
 
 * Waveform
-<img src="images/lab3waveform.png">
-
-* Schematic
+<img src="images/lab3%20waveform%20with%20color.jpg">
 
 # D-Flip-Flop (DFF) Module
 ```verilog
@@ -209,6 +207,32 @@ module ASM(
                     );
        
 endmodule
+```
+# Constraint File
+```.xdc
+# Disable Clock
+set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets Clk_IBUF]
+# Set YP as a switch
+set_property PACKAGE_PIN V17 [get_ports YP]
+    set_property IOSTANDARD LVCMOS33 [get_ports YP]
+# Set NS as a switch
+set_property PACKAGE_PIN V16 [get_ports NS]
+    set_property IOSTANDARD LVCMOS33 [get_ports NS]
+# Set Clk as a push button
+set_property PACKAGE_PIN W19 [get_ports Clk]
+    set_property IOSTANDARD LVCMOS33 [get_ports Clk]
+# Set HYL as a LED
+set_property PACKAGE_PIN U16 [get_ports {HYL}]
+    set_property IOSTANDARD LVCMOS33 [get_ports {HYL}]
+# Set HRL as a LED
+set_property PACKAGE_PIN E19 [get_ports {HRL}]
+    set_property IOSTANDARD LVCMOS33 [get_ports {HRL}]
+# Set HW as a LED
+set_property PACKAGE_PIN U19 [get_ports {HW}]
+    set_property IOSTANDARD LVCMOS33 [get_ports {HW}]
+# Set HDNW as a LED
+set_property PACKAGE_PIN V19 [get_ports {HDNW}]
+    set_property IOSTANDARD LVCMOS33 [get_ports {HDNW}]
 ```
 
 # Software Development
