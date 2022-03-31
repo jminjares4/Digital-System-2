@@ -34,7 +34,7 @@ begin
 #10 up_dwn = 1;
 #10 up_dwn = 1;
 #10 up_dwn = 3;
-#10 up_dwn = 2;
+#10 up_dwn = 3;
 #10 up_dwn = 2;
 #10 up_dwn = 2;
 #10 up_dwn = 1;
