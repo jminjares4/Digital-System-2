@@ -30,8 +30,8 @@ begin
     $dumpfile("jesus_minjares_tb.vcd");
     $dumpvars(0, jesus_quiztb);
 
-    up_dwn = 1;
-#10 up_dwn = 1;
+    up_dwn = 1; reset = 0;
+#10 up_dwn = 1; reset = 1;
 #10 up_dwn = 1;
 #10 up_dwn = 3;
 #10 up_dwn = 3;
